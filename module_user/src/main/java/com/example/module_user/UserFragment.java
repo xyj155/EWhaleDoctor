@@ -7,9 +7,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.alibaba.android.arouter.facade.annotation.Route;
-import com.example.module_library.RouterConfig;
-
 //@Route(path = RouterConfig.USERFRAGMENT)
 public class UserFragment extends Fragment {
     @Nullable

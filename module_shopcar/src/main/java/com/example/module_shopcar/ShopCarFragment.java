@@ -7,7 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
-import com.example.module_library.RouterConfig;
+import com.example.module_library.config.RouterConfig;
 
 @Route(path = RouterConfig.SHOPCARFRAGMENT)
 public class ShopCarFragment extends Fragment {

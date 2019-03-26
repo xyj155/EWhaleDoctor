@@ -2,5 +2,26 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
-
+<android.support.v7.widget.Toolbar
+    android:layout_width="match_parent"
+    android:background="#fff"
+    android:layout_height="@dimen/dp_65">
+<TextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/search_bg"
+    android:text="搜索你喜欢吃的零食"
+    android:drawableLeft="@mipmap/search"
+    android:padding="@dimen/dp_10"
+    android:drawablePadding="@dimen/dp_8"
+    android:layout_marginRight="@dimen/dp_10"
+    android:layout_marginLeft="@dimen/dp_10"/>
+</android.support.v7.widget.Toolbar>
+ <android.support.v4.widget.SwipeRefreshLayout
+     android:layout_width="match_parent"
+     android:layout_height="match_parent">
+     <android.support.v7.widget.RecyclerView
+         android:layout_width="wrap_content"
+         android:layout_height="match_parent"/>
+ </android.support.v4.widget.SwipeRefreshLayout>
 </LinearLayout>

@@ -2,7 +2,7 @@ package com.example.module_library;
 
 import android.app.Application;
 
-import java.util.Map;
+import com.example.module_library.config.ApplicationInitial;
 
 public class MyApp extends Application {
     public static MyApp instance;

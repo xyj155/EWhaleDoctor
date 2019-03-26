@@ -1,4 +1,4 @@
-package com.example.module_library;
+package com.example.module_library.config;
 
 public class RouterConfig {
     public final static String HOMEFRAGMENT="/home/fragment";

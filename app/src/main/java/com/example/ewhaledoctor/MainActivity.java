@@ -6,15 +6,12 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
-import android.view.View;
 import android.widget.CompoundButton;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
-import com.alibaba.android.arouter.launcher.ARouter;
 import com.example.module_home.HomeFragment;
 import com.example.module_kind.KindFragment;
-import com.example.module_library.RouterConfig;
 import com.example.module_shopcar.ShopCarFragment;
 import com.example.module_user.UserFragment;
 
