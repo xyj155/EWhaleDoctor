@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 
+import com.example.module_library.MyApp;
 import com.example.module_library.R;
 
 import butterknife.ButterKnife;
@@ -32,13 +33,10 @@ public abstract class BaseFragment<T extends BasePresenter> extends Fragment {
     }
 
 
-    public BaseFragment createDialog(String msgStr) {
-        progressDialog = new Dialog(getActivity(), R.style.progress_dialog);
+    public BaseFragment createDialog() {
+        progressDialog = new Dialog(getContext(), R.style.progress_dialog);
         progressDialog.setContentView(R.layout.base_dialog);
-
         progressDialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
-        TextView msg = (TextView) progressDialog.findViewById(R.id.id_tv_loadingmsg);
-        msg.setText(msgStr);
         progressDialog.show();
         return this;
     }
@@ -49,7 +47,8 @@ public abstract class BaseFragment<T extends BasePresenter> extends Fragment {
     }
 
     public void dialogCancel() {
-        progressDialog.dismiss();
+        if (progressDialog != null)
+            progressDialog.dismiss();
     }
 
     /**
