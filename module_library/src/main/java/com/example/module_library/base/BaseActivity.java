@@ -2,7 +2,6 @@ package com.example.module_library.base;
 
 import android.app.Dialog;
 import android.content.Intent;
-import android.content.IntentFilter;
 import android.content.pm.ActivityInfo;
 import android.os.Build;
 import android.os.Bundle;
@@ -11,12 +10,11 @@ import android.support.v4.app.FragmentActivity;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.module_library.R;
 import com.example.module_library.util.ActivityCollector;
 import com.example.module_library.util.StatusBarUtil;
-import com.example.module_library.weight.MyDialog;
+import com.example.module_library.weight.LoadingDialog;
 
 
 public abstract class BaseActivity<V extends BaseView, T extends BasePresenter<V>> extends FragmentActivity {
@@ -24,7 +22,7 @@ public abstract class BaseActivity<V extends BaseView, T extends BasePresenter<V
     protected final String TAG = this.getClass().getSimpleName();
     public T mPresenter;
     public Dialog progressDialog;
-    private MyDialog myDialog1;
+    private LoadingDialog myDialog1;
 
 
 
@@ -37,9 +35,9 @@ public abstract class BaseActivity<V extends BaseView, T extends BasePresenter<V
         if (myDialog1 != null) {
             myDialog1.setContent(content);
             myDialog1.setTitle(title);
-            myDialog1.setOnCenterItemClickListener(new MyDialog.OnCenterItemClickListener() {
+            myDialog1.setOnCenterItemClickListener(new LoadingDialog.OnCenterItemClickListener() {
                 @Override
-                public void onCenterItemClick(MyDialog dialog, View view) {
+                public void onCenterItemClick(LoadingDialog dialog, View view) {
                     int i = view.getId();
                     if (i == R.id.dialog_btn_close) {
                         dialog.dismiss();
@@ -56,7 +54,7 @@ public abstract class BaseActivity<V extends BaseView, T extends BasePresenter<V
 
 
     public interface OnItemClickListener {
-        void onConfirm(MyDialog dialog);
+        void onConfirm(LoadingDialog dialog);
     }
 
     @Override
@@ -81,7 +79,7 @@ public abstract class BaseActivity<V extends BaseView, T extends BasePresenter<V
         initView();
         //设置数据
         initData();
-        myDialog1 = new MyDialog(this, new int[]{R.id.dialog_btn_close, R.id.dialog_btn_cancel});
+        myDialog1 = new LoadingDialog(this, new int[]{R.id.dialog_btn_close, R.id.dialog_btn_cancel});
     }
 
 
@@ -106,7 +104,7 @@ public abstract class BaseActivity<V extends BaseView, T extends BasePresenter<V
 
 
 
-    public void createDialog(String msgStr) {
+    public void createDialog() {
         if (progressDialog!=null){
             progressDialog.show();
         }

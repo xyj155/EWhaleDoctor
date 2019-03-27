@@ -1,5 +1,6 @@
 package com.example.ewhaledoctor;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -10,12 +11,15 @@ import android.widget.CompoundButton;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
+import com.alibaba.android.arouter.facade.annotation.Route;
 import com.example.module_home.HomeFragment;
 import com.example.module_kind.KindFragment;
+import com.example.module_library.config.RouterConfig;
+import com.example.module_login.view.UserLoginActivity;
 import com.example.module_shopcar.ShopCarFragment;
 import com.example.module_user.UserFragment;
 
-
+@Route(path = RouterConfig.HOMEPAGE)
 public class MainActivity extends AppCompatActivity implements CompoundButton.OnCheckedChangeListener {
 
     private RadioButton rbHome;

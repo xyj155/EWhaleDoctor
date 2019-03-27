@@ -19,6 +19,7 @@ public class MyApp extends Application {
         super.onCreate();
         instance = this;
         ApplicationInitial applicationInitial = new ApplicationInitial();
-        applicationInitial.initAliBabaRouter();
+        applicationInitial.initAliBabaRouter()
+                .initToast();
     }
 }

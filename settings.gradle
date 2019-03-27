@@ -1,1 +1,1 @@
-include ':app', ':module_home', ':module_user', ':module_kind', ':module_shopcar', ':module_library'
+include ':app', ':module_home', ':module_user', ':module_kind', ':module_shopcar', ':module_library', ':module_login'

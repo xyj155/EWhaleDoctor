@@ -14,13 +14,13 @@ import android.widget.TextView;
 import com.example.module_library.R;
 
 
-public class MyDialog extends Dialog implements View.OnClickListener {
+public class LoadingDialog extends Dialog implements View.OnClickListener {
     //在构造方法里提前加载了样式
     private Context context;//上下文
     private int[] listenedItem;//监听的控件id
     private TextView vMsg, tvTitle;
 
-    public MyDialog(Context context, int[] listenedItem) {
+    public LoadingDialog(Context context, int[] listenedItem) {
         super(context, R.style.AppDialog);//加载dialog的样式
         this.context = context;
         this.listenedItem = listenedItem;
@@ -65,7 +65,7 @@ public class MyDialog extends Dialog implements View.OnClickListener {
     private OnCenterItemClickListener listener;
 
     public interface OnCenterItemClickListener {
-        void onCenterItemClick(MyDialog dialog, View view);
+        void onCenterItemClick(LoadingDialog dialog, View view);
     }
 
 
