@@ -2,11 +2,17 @@ apply plugin: 'com.android.application'
 
 android {
     signingConfigs {
-        config {
-            keyAlias 'key0'
-            keyPassword '123456'
-            storeFile file('D:/EWhaleDoctor/ewhalekey.jks')
-            storePassword '123456'
+        debug {
+            storeFile file("key0.jks") //签名文件路径
+            storePassword "123456"
+            keyAlias "key0"
+            keyPassword "123456" //签名密码
+        }
+        release {
+            storeFile file("key0.jks") //签名文件路径
+            storePassword "123456"
+            keyAlias "key0"
+            keyPassword "123456" //签名密码
         }
     }
     compileSdkVersion rootProject.ext.android.compileSdkVersion

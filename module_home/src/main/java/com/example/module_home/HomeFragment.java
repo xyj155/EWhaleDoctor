@@ -31,6 +31,7 @@ import com.example.module_library.base.BaseFragment;
 import com.example.module_library.config.RouterConfig;
 import com.example.module_library.logic.presenter.EmptyPresenter;
 import com.example.module_library.weight.ColorFlipPagerTitleView;
+import com.example.module_library.weight.DecoratorViewPager;
 import com.example.module_library.weight.toast.ToastUtils;
 
 import net.lucode.hackware.magicindicator.MagicIndicator;
@@ -79,7 +80,7 @@ public class HomeFragment extends BaseFragment<EmptyPresenter> {
     ImageView ivScan;
     ImageView ivSearch;
     MagicIndicator mgTitle;
-    ViewPager vpHome;
+    DecoratorViewPager vpHome;
     Unbinder unbinder;
     TextView tvLocation;
     private List<Fragment> fragmentList = new ArrayList<>();

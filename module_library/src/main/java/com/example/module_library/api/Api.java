@@ -1,6 +1,7 @@
 package com.example.module_library.api;
 
 import com.example.module_library.base.BaseGson;
+import com.example.module_library.gson.FoodsGson;
 import com.example.module_library.gson.SnackKindGson;
 import com.example.module_library.gson.UserGson;
 
@@ -14,6 +15,8 @@ public interface Api {
 
     @GET("/StuShop/public/index.php/snack/Snack/querySnackKind")
     Observable<BaseGson<SnackKindGson>> querySnackKind();
+    @GET("/StuShop/public/index.php/snack/Snack/test")
+    Observable<BaseGson<FoodsGson>> test();
 
     @FormUrlEncoded
     @POST("/StuShop/public/index.php/index/User/userLoginByUserName")

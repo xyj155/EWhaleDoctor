@@ -2,15 +2,22 @@ package com.example.module_home.homefragment;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import com.example.module_home.R;
+import com.example.module_home.contract.HomePageContract;
+import com.example.module_home.presenter.HomePagePresenter;
+import com.example.module_library.adapter.SnackMiniItemAdapter;
 import com.example.module_library.base.BaseFragment;
+import com.example.module_library.gson.FoodsGson;
 import com.example.module_library.logic.presenter.EmptyPresenter;
 import com.example.module_library.util.GlideUtil;
+import com.example.module_library.weight.CustomRecyclerView;
 import com.zhouwei.mzbanner.MZBannerView;
 import com.zhouwei.mzbanner.holder.MZHolderCreator;
 import com.zhouwei.mzbanner.holder.MZViewHolder;
@@ -21,11 +28,13 @@ import java.util.List;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
 
-public class HomePageFragment extends BaseFragment<EmptyPresenter> {
+public class HomePageFragment extends BaseFragment<HomePagePresenter> implements HomePageContract.View {
 
 
     MZBannerView mzbHome;
     Unbinder unbinder;
+    private CustomRecyclerView ryPurse;
+    private SnackMiniItemAdapter snackMiniItemAdapter;
 
     @Override
     public void initData() {
@@ -43,6 +52,30 @@ public class HomePageFragment extends BaseFragment<EmptyPresenter> {
             }
         });
         mzbHome.start();
+        mPresenter.test();
+        snackMiniItemAdapter = new SnackMiniItemAdapter(null);
+        ryPurse.setAdapter(snackMiniItemAdapter);
+    }
+
+    @Override
+    public void test(List<FoodsGson> list) {
+
+        snackMiniItemAdapter.replaceData(list);
+    }
+
+    @Override
+    public void showError(String msg) {
+
+    }
+
+    @Override
+    public void showDialog() {
+
+    }
+
+    @Override
+    public void hideDialog() {
+
     }
 
     public static class BannerViewHolder implements MZViewHolder<String> {
@@ -58,8 +91,6 @@ public class HomePageFragment extends BaseFragment<EmptyPresenter> {
 
         @Override
         public void onBind(Context context, int position, String data) {
-            // 数据绑定
-//            mImageView.setImageResource(data);
             GlideUtil.BaseGlide(data, mImageView);
         }
     }
@@ -67,6 +98,10 @@ public class HomePageFragment extends BaseFragment<EmptyPresenter> {
     @Override
     public void initView(View view) {
         mzbHome = view.findViewById(R.id.mzb_home);
+        ryPurse = view.findViewById(R.id.ry_purse);
+        LinearLayoutManager layout = new LinearLayoutManager(getContext());
+        layout.setOrientation(LinearLayoutManager.HORIZONTAL);
+        ryPurse.setLayoutManager(layout);
     }
 
     @Override
@@ -75,8 +110,8 @@ public class HomePageFragment extends BaseFragment<EmptyPresenter> {
     }
 
     @Override
-    public EmptyPresenter initPresenter() {
-        return null;
+    public HomePagePresenter initPresenter() {
+        return new HomePagePresenter(this);
     }
 
     @Override
