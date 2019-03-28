@@ -18,7 +18,7 @@ public class GlideUtil {
     }
 
 
-    public static void loadRoundCornerImage(String url, ImageView imageView) {
+    public static void loadRoundCornerImage(Object url, ImageView imageView) {
         RoundedCorners roundedCorners = new RoundedCorners(10);
         RequestOptions options = RequestOptions.bitmapTransform(roundedCorners).override(300, 300);
         Glide.with(MyApp.getInstance()).asBitmap().apply(options).load(url).into(imageView);

@@ -1,11 +1,8 @@
 package com.example.ewhaledoctor;
 
-import android.content.Intent;
-import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.CompoundButton;
 import android.widget.RadioButton;
@@ -13,14 +10,16 @@ import android.widget.RadioGroup;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.example.module_home.HomeFragment;
-import com.example.module_kind.KindFragment;
+import com.example.module_kind.view.KindFragment;
+import com.example.module_library.base.BaseActivity;
 import com.example.module_library.config.RouterConfig;
-import com.example.module_login.view.UserLoginActivity;
+import com.example.module_library.logic.contract.EmptyContract;
+import com.example.module_library.logic.presenter.EmptyPresenter;
 import com.example.module_shopcar.ShopCarFragment;
-import com.example.module_user.UserFragment;
+import com.example.module_user.view.UserFragment;
 
 @Route(path = RouterConfig.HOMEPAGE)
-public class MainActivity extends AppCompatActivity implements CompoundButton.OnCheckedChangeListener {
+public class MainActivity extends BaseActivity<EmptyContract.View, EmptyPresenter> implements CompoundButton.OnCheckedChangeListener {
 
     private RadioButton rbHome;
     private RadioButton rbKind;
@@ -36,15 +35,34 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
     private Fragment shopCarFragment;
     private Fragment userFragment;
 
+
+
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+    public boolean isSetStatusBarTranslucent() {
+        return true;
+    }
+
+    @Override
+    public EmptyPresenter getPresenter() {
+        return null;
+    }
+
+    @Override
+    public int intiLayout() {
+        return R.layout.activity_main;
+    }
+
+    @Override
+    public void initView() {
         rbHome = findViewById(R.id.rb_home);
         rbKind = findViewById(R.id.rb_kind);
         rbShopcar = findViewById(R.id.rb_shopcar);
         rbUser = findViewById(R.id.rb_user);
         rgHome = findViewById(R.id.rg_home);
+    }
+
+    @Override
+    public void initData() {
         supportFragmentManager = getSupportFragmentManager();
         rbHome.setChecked(true);
         showFirstPosition();

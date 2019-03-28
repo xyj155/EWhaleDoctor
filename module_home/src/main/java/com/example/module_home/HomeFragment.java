@@ -64,8 +64,8 @@ public class HomeFragment extends BaseFragment<EmptyPresenter> {
         public void onLocationChanged(AMapLocation amapLocation) {
             if (amapLocation != null) {
                 if (amapLocation.getErrorCode() == 0) {
-                    tvLocation.setText(amapLocation.getAoiName());
-                    Log.i(TAG, "onLocationChanged: " + amapLocation.getStreet());
+                    tvLocation.setText(amapLocation.getStreet());
+                    Log.i(TAG, "onLocationChanged: " + amapLocation.getAoiName());
                 } else {
                     tvLocation.setText("定位错误");
                     ToastUtils.show("定位错误："+amapLocation.getErrorInfo());
@@ -111,9 +111,10 @@ public class HomeFragment extends BaseFragment<EmptyPresenter> {
 
     private void initFragmentList() {
         fragmentList.add(new HomePageFragment());
+        fragmentList.add(new EnergyFragment());
         fragmentList.add(new RefreshingPageFragment());
         fragmentList.add(new LeisureFragment());
-        fragmentList.add(new EnergyFragment());
+
         homePagerAdapter = new HomePagerAdapter(getChildFragmentManager(), fragmentList);
         vpHome.setAdapter(homePagerAdapter);
         mgTitle.setBackgroundColor(Color.parseColor("#ffffff"));

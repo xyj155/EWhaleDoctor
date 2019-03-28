@@ -6,6 +6,7 @@ import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 
 import com.example.module_library.util.SharePreferenceUtil;
+import com.example.module_library.util.StringUtil;
 import com.example.module_login.view.UserLoginActivity;
 
 public class AppSplashActivity extends AppCompatActivity {
@@ -17,15 +18,16 @@ public class AppSplashActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Object user = SharePreferenceUtil.getUser("uid", "String");
-                if (user == null) {
+                String user = (String) SharePreferenceUtil.getUser("uid", "String");
+                if (StringUtil.isEmpty(user)) {
                     startActivity(new Intent(AppSplashActivity.this, UserLoginActivity.class));
                 } else {
                     startActivity(new Intent(AppSplashActivity.this, MainActivity.class));
                 }
+                overridePendingTransition(R.anim.fade, R.anim.hold);
                 finish();
 
             }
-        }, 200);
+        }, 1500);
     }
 }

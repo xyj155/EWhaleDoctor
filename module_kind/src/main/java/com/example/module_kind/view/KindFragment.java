@@ -1,4 +1,4 @@
-package com.example.module_kind;
+package com.example.module_kind.view;
 
 import android.os.Bundle;
 import android.support.v4.widget.SwipeRefreshLayout;
@@ -9,17 +9,16 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
-import com.example.module_kind.adapter.SnackKindAdater;
+import com.example.module_kind.R;
+import com.example.module_kind.adapter.SnackKindAdapter;
 import com.example.module_kind.contract.SnackKindContract;
 import com.example.module_kind.presenter.SnackKindPresenter;
 import com.example.module_library.base.BaseFragment;
 import com.example.module_library.config.RouterConfig;
 import com.example.module_library.gson.SnackKindGson;
-import com.example.module_library.logic.presenter.EmptyPresenter;
 
 import java.util.List;
 
-import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
 
@@ -30,11 +29,11 @@ public class KindFragment extends BaseFragment<SnackKindPresenter> implements Sn
     RecyclerView ryKind;
     SwipeRefreshLayout smlKind;
     Unbinder unbinder;
-    private SnackKindAdater snackKindAdater;
+    private SnackKindAdapter snackKindAdater;
 
     @Override
     public void initData() {
-        snackKindAdater = new SnackKindAdater(null);
+        snackKindAdater = new SnackKindAdapter(null,getContext());
         ryKind.setLayoutManager(new GridLayoutManager(getContext(),2));
         ryKind.setAdapter(snackKindAdater);
         mPresenter.querySnackKind();

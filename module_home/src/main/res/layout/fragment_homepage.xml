@@ -3,172 +3,176 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-
-
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<android.support.v4.widget.NestedScrollView
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
-
-    <com.zhouwei.mzbanner.MZBannerView
-        android:id="@+id/mzb_home"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/dp_160"
-        android:layout_marginLeft="@dimen/dp_23"
-        android:layout_marginTop="@dimen/dp_10"
-        android:layout_marginRight="@dimen/dp_23"
-        app:open_mz_mode="false" />
-
-    <LinearLayout
-        android:paddingRight="@dimen/dp_8"
-        android:paddingLeft="@dimen/dp_8"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:weightSum="5">
-
-        <ImageView
-            android:layout_margin="@dimen/dp_8"
-            android:layout_weight="1"
-            android:padding="@dimen/dp_5"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/dp_37"
-            android:src="@mipmap/ic_cake_mini" />
-        <ImageView
-            android:layout_weight="1"
-            android:padding="@dimen/dp_5"
-            android:layout_margin="@dimen/dp_8"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/dp_37"
-            android:src="@mipmap/ic_fruit" />
-        <ImageView
-            android:layout_margin="@dimen/dp_8"
-            android:layout_weight="1"
-            android:padding="@dimen/dp_5"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/dp_37"
-            android:src="@mipmap/ic_sport" />
-        <ImageView
-            android:layout_margin="@dimen/dp_8"
-            android:layout_weight="1"
-            android:layout_width="match_parent"
-            android:padding="@dimen/dp_5"
-            android:layout_height="@dimen/dp_37"
-            android:src="@mipmap/ic_rank" />
-        <ImageView
-            android:layout_weight="1"
-            android:layout_width="match_parent"
-            android:padding="@dimen/dp_5"
-            android:layout_margin="@dimen/dp_8"
-            android:layout_height="@dimen/dp_37"
-            android:src="@mipmap/ic_sign" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:paddingRight="@dimen/dp_8"
-        android:paddingLeft="@dimen/dp_8"
-        android:layout_height="wrap_content"
-        android:weightSum="5">
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:text="迷你零食"
-            android:textColor="#000" />
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:text="水果盒子"
-            android:textColor="#000" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:text="低卡零脂"
-            android:textColor="#000" />
-
-
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:text="热销排行"
-            android:textColor="#000" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:text="每日种草"
-            android:textColor="#000" />
-    </LinearLayout>
-    <View
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="@dimen/dp_8"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/dp_5"
-        android:background="#fafafa"/>
-    <RelativeLayout
-        android:paddingLeft="@dimen/dp_10"
-        android:paddingRight="@dimen/dp_10"
-        android:paddingTop="@dimen/dp_10"
-        android:paddingBottom="@dimen/dp_10"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="#000"
-            android:text="活力下午茶"
-            android:textStyle="bold"
-            android:id="@+id/tv_title"
-            android:textSize="@dimen/dp_18"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="悠悠悠！宁静的下午茶时光"
-            android:layout_below="@+id/tv_title"
-            android:textSize="13sp"
-            android:layout_marginTop="@dimen/dp_5"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:textStyle="bold"
-            android:layout_height="wrap_content"
-            android:text="更多"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:textColor="#000" />
-    </RelativeLayout>
-    <com.example.module_library.weight.CustomRecyclerView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/ry_purse"/>
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/dp_5"
-        android:background="#fafafa"/>
-    <TextView
-        android:layout_width="match_parent"
-        android:gravity="center"
-        android:padding="@dimen/dp_8"
-        android:layout_height="wrap_content"
-        android:textColor="#000"
-        android:text="商品推荐"
-        android:textStyle="bold"
-        android:textSize="@dimen/dp_18"/>
-    <android.support.v7.widget.RecyclerView
+    android:layout_height="match_parent">
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/ry_goods_purse"/>
-</LinearLayout>
+        android:orientation="vertical">
+
+        <com.zhouwei.mzbanner.MZBannerView
+            android:id="@+id/mzb_home"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_160"
+            android:layout_marginLeft="@dimen/dp_23"
+            android:layout_marginTop="@dimen/dp_10"
+            android:layout_marginRight="@dimen/dp_23"
+            app:open_mz_mode="false" />
+
+        <LinearLayout
+            android:paddingRight="@dimen/dp_8"
+            android:paddingLeft="@dimen/dp_8"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="5">
+
+            <ImageView
+                android:layout_margin="@dimen/dp_8"
+                android:layout_weight="1"
+                android:padding="@dimen/dp_5"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_37"
+                android:src="@mipmap/ic_cake_mini" />
+            <ImageView
+                android:layout_weight="1"
+                android:padding="@dimen/dp_5"
+                android:layout_margin="@dimen/dp_8"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_37"
+                android:src="@mipmap/ic_fruit" />
+            <ImageView
+                android:layout_margin="@dimen/dp_8"
+                android:layout_weight="1"
+                android:padding="@dimen/dp_5"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_37"
+                android:src="@mipmap/ic_sport" />
+            <ImageView
+                android:layout_margin="@dimen/dp_8"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:padding="@dimen/dp_5"
+                android:layout_height="@dimen/dp_37"
+                android:src="@mipmap/ic_rank" />
+            <ImageView
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:padding="@dimen/dp_5"
+                android:layout_margin="@dimen/dp_8"
+                android:layout_height="@dimen/dp_37"
+                android:src="@mipmap/ic_sign" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:paddingRight="@dimen/dp_8"
+            android:paddingLeft="@dimen/dp_8"
+            android:layout_height="wrap_content"
+            android:weightSum="5">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="迷你零食"
+                android:textColor="#000" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="水果盒子"
+                android:textColor="#000" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="低卡零脂"
+                android:textColor="#000" />
+
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="热销排行"
+                android:textColor="#000" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="每日种草"
+                android:textColor="#000" />
+        </LinearLayout>
+        <View
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="@dimen/dp_8"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_5"
+            android:background="#fafafa"/>
+        <RelativeLayout
+            android:paddingLeft="@dimen/dp_10"
+            android:paddingRight="@dimen/dp_10"
+            android:paddingTop="@dimen/dp_10"
+            android:paddingBottom="@dimen/dp_10"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#000"
+                android:text="活力下午茶"
+                android:textStyle="bold"
+                android:id="@+id/tv_title"
+                android:textSize="@dimen/dp_18"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="悠悠悠！宁静的下午茶时光"
+                android:layout_below="@+id/tv_title"
+                android:textSize="13sp"
+                android:layout_marginTop="@dimen/dp_5"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:textStyle="bold"
+                android:layout_height="wrap_content"
+                android:text="更多"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:textColor="#000" />
+        </RelativeLayout>
+        <com.example.module_library.weight.CustomRecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/ry_purse"/>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_5"
+            android:background="#fafafa"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:gravity="center"
+            android:padding="@dimen/dp_8"
+            android:layout_height="wrap_content"
+            android:textColor="#000"
+            android:text="商品推荐"
+            android:textStyle="bold"
+            android:textSize="@dimen/dp_18"/>
+        <android.support.v7.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/ry_goods_purse"/>
+    </LinearLayout>
+
+</android.support.v4.widget.NestedScrollView>
+
 </android.support.v4.widget.SwipeRefreshLayout>

@@ -11,7 +11,7 @@ buildscript {
         maven { url "http://mvn.mob.com/android" }
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.3.2'
+        classpath 'com.android.tools.build:gradle:3.2.0'
         classpath "com.alibaba:arouter-register:1.0.2"
         classpath 'com.jakewharton:butterknife-gradle-plugin:9.0.0-rc2'
         classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8'
