@@ -9,7 +9,7 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
-import com.example.module_home.HomeFragment;
+import com.example.module_home.view.HomeFragment;
 import com.example.module_kind.view.KindFragment;
 import com.example.module_library.base.BaseActivity;
 import com.example.module_library.config.RouterConfig;

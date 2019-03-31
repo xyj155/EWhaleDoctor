@@ -20,6 +20,7 @@ public class MyApp extends Application {
         instance = this;
         ApplicationInitial applicationInitial = new ApplicationInitial();
         applicationInitial.initAliBabaRouter()
-                .initToast();
+                .initToast()
+                .initTencentQQ();
     }
 }

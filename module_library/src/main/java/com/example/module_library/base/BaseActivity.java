@@ -25,7 +25,6 @@ public abstract class BaseActivity<V extends BaseView, T extends BasePresenter<V
     private LoadingDialog myDialog1;
 
 
-
     //    @Override
 //    public void onBackPressed() {
 //        super.onBackPressed();
@@ -53,6 +52,7 @@ public abstract class BaseActivity<V extends BaseView, T extends BasePresenter<V
     }
 
 
+
     public interface OnItemClickListener {
         void onConfirm(LoadingDialog dialog);
     }
@@ -63,8 +63,10 @@ public abstract class BaseActivity<V extends BaseView, T extends BasePresenter<V
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         if (isSetStatusBarTranslucent()) {
             StatusBarUtil.setStatusBarTranslucent(this);
-            StatusBarUtil.setStatusBarTextColor(this);
         }
+
+            StatusBarUtil.setStatusBarTextColor(this);
+
 
         ActivityCollector.addActivity(this);
         mPresenter = getPresenter();
@@ -103,10 +105,8 @@ public abstract class BaseActivity<V extends BaseView, T extends BasePresenter<V
     }
 
 
-
-
     public void createDialog() {
-        if (progressDialog!=null){
+        if (progressDialog != null) {
             progressDialog.show();
         }
 

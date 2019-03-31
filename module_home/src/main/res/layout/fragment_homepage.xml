@@ -34,15 +34,18 @@
                 android:padding="@dimen/dp_5"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/dp_37"
+                android:id="@+id/iv_minicake"
                 android:src="@mipmap/ic_cake_mini" />
             <ImageView
                 android:layout_weight="1"
+                android:id="@+id/iv_fruit"
                 android:padding="@dimen/dp_5"
                 android:layout_margin="@dimen/dp_8"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/dp_37"
                 android:src="@mipmap/ic_fruit" />
             <ImageView
+                android:id="@+id/iv_low_energy"
                 android:layout_margin="@dimen/dp_8"
                 android:layout_weight="1"
                 android:padding="@dimen/dp_5"
@@ -55,11 +58,13 @@
                 android:layout_width="match_parent"
                 android:padding="@dimen/dp_5"
                 android:layout_height="@dimen/dp_37"
-                android:src="@mipmap/ic_rank" />
+                android:src="@mipmap/ic_rank"
+                android:id="@+id/iv_rank"/>
             <ImageView
                 android:layout_weight="1"
                 android:layout_width="match_parent"
                 android:padding="@dimen/dp_5"
+                android:id="@+id/iv_sign"
                 android:layout_margin="@dimen/dp_8"
                 android:layout_height="@dimen/dp_37"
                 android:src="@mipmap/ic_sign" />

@@ -108,6 +108,7 @@ public class UserFragment extends BaseFragment<EmptyPresenter> {
             startActivity(new Intent(getActivity(),UserReceivingAddressActivity.class));
         } else if (i == R.id.tv_user_score) {
         } else if (i == R.id.tv_user_invite) {
+            startActivity(new Intent(getActivity(),UserInviteActivity.class));
         } else if (i == R.id.tv_user_feedback) {
         } else if (i == R.id.tv_user_service) {
         }

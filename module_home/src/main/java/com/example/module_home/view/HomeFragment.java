@@ -1,4 +1,4 @@
-package com.example.module_home;
+package com.example.module_home.view;
 
 import android.content.Context;
 import android.graphics.Color;
@@ -22,6 +22,7 @@ import com.amap.api.location.AMapLocation;
 import com.amap.api.location.AMapLocationClient;
 import com.amap.api.location.AMapLocationClientOption;
 import com.amap.api.location.AMapLocationListener;
+import com.example.module_home.R;
 import com.example.module_home.homefragment.EnergyFragment;
 import com.example.module_home.homefragment.HomePageFragment;
 import com.example.module_home.homefragment.LeisureFragment;

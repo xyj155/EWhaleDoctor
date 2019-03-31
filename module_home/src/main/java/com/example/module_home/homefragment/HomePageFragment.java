@@ -1,21 +1,22 @@
 package com.example.module_home.homefragment;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import com.example.module_home.R;
+import com.example.module_home.R2;
 import com.example.module_home.contract.HomePageContract;
 import com.example.module_home.presenter.HomePagePresenter;
+import com.example.module_home.view.MiniSnackActivity;
 import com.example.module_library.adapter.SnackMiniItemAdapter;
 import com.example.module_library.base.BaseFragment;
 import com.example.module_library.gson.FoodsGson;
-import com.example.module_library.logic.presenter.EmptyPresenter;
 import com.example.module_library.util.GlideUtil;
 import com.example.module_library.weight.CustomRecyclerView;
 import com.zhouwei.mzbanner.MZBannerView;
@@ -25,7 +26,9 @@ import com.zhouwei.mzbanner.holder.MZViewHolder;
 import java.util.ArrayList;
 import java.util.List;
 
+import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 import butterknife.Unbinder;
 
 public class HomePageFragment extends BaseFragment<HomePagePresenter> implements HomePageContract.View {
@@ -33,6 +36,16 @@ public class HomePageFragment extends BaseFragment<HomePagePresenter> implements
 
     MZBannerView mzbHome;
     Unbinder unbinder;
+    @BindView(R2.id.iv_minicake)
+    ImageView ivMinicake;
+    @BindView(R2.id.iv_fruit)
+    ImageView ivFruit;
+    @BindView(R2.id.iv_low_energy)
+    ImageView ivLowEnergy;
+    @BindView(R2.id.iv_rank)
+    ImageView ivRank;
+    @BindView(R2.id.iv_sign)
+    ImageView ivSign;
     private CustomRecyclerView ryPurse;
     private SnackMiniItemAdapter snackMiniItemAdapter;
 
@@ -78,6 +91,18 @@ public class HomePageFragment extends BaseFragment<HomePagePresenter> implements
 
     }
 
+    @OnClick({R2.id.iv_minicake, R2.id.iv_fruit, R2.id.iv_low_energy,R2.id.iv_rank, R2.id.iv_sign})
+    public void onViewClicked(View view) {
+        int i = view.getId();
+        if (i == R.id.iv_minicake) {
+            startActivity(new Intent(getContext(), MiniSnackActivity.class));
+        } else if (i == R.id.iv_fruit) {
+        } else if (i == R.id.iv_low_energy) {
+        } else if (i == R.id.iv_rank) {
+        } else if (i == R.id.iv_sign) {
+        }
+    }
+
     public static class BannerViewHolder implements MZViewHolder<String> {
         private ImageView mImageView;
 
@@ -97,6 +122,7 @@ public class HomePageFragment extends BaseFragment<HomePagePresenter> implements
 
     @Override
     public void initView(View view) {
+        unbinder = ButterKnife.bind(this, view);
         mzbHome = view.findViewById(R.id.mzb_home);
         ryPurse = view.findViewById(R.id.ry_purse);
         LinearLayoutManager layout = new LinearLayoutManager(getContext());
@@ -118,7 +144,7 @@ public class HomePageFragment extends BaseFragment<HomePagePresenter> implements
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // TODO: inflate a fragment view
         View rootView = super.onCreateView(inflater, container, savedInstanceState);
-        unbinder = ButterKnife.bind(this, rootView);
+
         return rootView;
     }
 

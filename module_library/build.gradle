@@ -71,5 +71,5 @@ dependencies {
     api 'com.amap.api:3dmap:5.0.0'
     api 'com.amap.api:location:4.3.0'
     api 'com.amap.api:search:5.0.0'
-
+    api files('src/lib/open_sdk_r6019_lite.jar')
 }
