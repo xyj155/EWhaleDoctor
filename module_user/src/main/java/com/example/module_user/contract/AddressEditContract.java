@@ -3,8 +3,9 @@ package com.example.module_user.contract;
 
 import com.example.module_library.base.BaseGson;
 import com.example.module_library.base.BaseView;
-import com.example.module_library.gson.EmptyGson;
 
+
+import nico.stytool.gson_module.EmptyGson;
 import rx.Observable;
 
 public interface AddressEditContract {

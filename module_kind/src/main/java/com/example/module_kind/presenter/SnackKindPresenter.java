@@ -4,10 +4,10 @@ import com.example.module_kind.contract.SnackKindContract;
 import com.example.module_kind.model.SnackKindModel;
 import com.example.module_library.base.BaseGson;
 import com.example.module_library.base.BasePresenter;
-import com.example.module_library.gson.SnackKindGson;
+
 import com.example.module_library.http.BaseObserver;
 
-import rx.Scheduler;
+import nico.stytool.gson_module.SnackKindGson;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
 

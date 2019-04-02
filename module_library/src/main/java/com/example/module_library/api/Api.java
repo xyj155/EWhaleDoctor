@@ -1,12 +1,15 @@
 package com.example.module_library.api;
 
-import com.example.module_library.base.BaseGson;
-import com.example.module_library.gson.EmptyGson;
-import com.example.module_library.gson.FoodsGson;
-import com.example.module_library.gson.SnackKindGson;
-import com.example.module_library.gson.UserGson;
-import com.example.module_library.gson.UserReceiveAddressGson;
 
+
+import com.example.module_library.base.BaseGson;
+
+import nico.stytool.gson_module.EmptyGson;
+import nico.stytool.gson_module.FoodsGson;
+import nico.stytool.gson_module.SnackChildGson;
+import nico.stytool.gson_module.SnackKindGson;
+import nico.stytool.gson_module.UserGson;
+import nico.stytool.gson_module.UserReceiveAddressGson;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
@@ -44,4 +47,7 @@ public interface Api {
                                                       @Field("location") String location,
                                                       @Field("detail") String detail,
                                                       @Field("id") String id);
+
+    @GET("/StuShop/public/index.php/snack/Snack/querySnackChildByPid")
+    Observable<BaseGson<SnackChildGson>> querySnackChildByPid(@Query("pid") String pid);
 }

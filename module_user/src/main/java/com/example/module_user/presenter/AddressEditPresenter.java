@@ -6,11 +6,12 @@ import android.util.Log;
 
 import com.example.module_library.base.BaseGson;
 import com.example.module_library.base.BasePresenter;
-import com.example.module_library.gson.EmptyGson;
+
 import com.example.module_library.http.BaseObserver;
 import com.example.module_user.contract.AddressEditContract;
 import com.example.module_user.model.AddressEditModel;
 
+import nico.stytool.gson_module.EmptyGson;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
 

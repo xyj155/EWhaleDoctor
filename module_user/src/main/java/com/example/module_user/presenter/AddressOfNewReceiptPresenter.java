@@ -4,11 +4,12 @@ package com.example.module_user.presenter;
 
 import com.example.module_library.base.BaseGson;
 import com.example.module_library.base.BasePresenter;
-import com.example.module_library.gson.EmptyGson;
+
 import com.example.module_library.http.BaseObserver;
 import com.example.module_user.contract.AddressOfNewReceiptContract;
 import com.example.module_user.model.AddressOfNewReceiptModel;
 
+import nico.stytool.gson_module.EmptyGson;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
 

@@ -6,12 +6,11 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.example.module_library.base.BaseActivity;
 import com.example.module_library.config.RouterConfig;
-import com.example.module_library.gson.UserGson;
+
 import com.example.module_library.util.Md5Util;
 import com.example.module_library.util.SharePreferenceUtil;
 import com.example.module_library.util.StringUtil;
@@ -25,7 +24,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import butterknife.ButterKnife;
-import butterknife.OnClick;
+import nico.stytool.gson_module.UserGson;
 
 public class UserLoginActivity extends BaseActivity<UserLoginContract.View, UserLoginPresenter> implements View.OnClickListener, UserLoginContract.View {
 

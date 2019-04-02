@@ -4,8 +4,9 @@ package com.example.module_login.contract;
 
 import com.example.module_library.base.BaseGson;
 import com.example.module_library.base.BaseView;
-import com.example.module_library.gson.UserGson;
 
+
+import nico.stytool.gson_module.UserGson;
 import rx.Observable;
 
 public interface UserLoginContract {

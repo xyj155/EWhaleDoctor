@@ -5,11 +5,12 @@ import android.util.Log;
 
 import com.example.module_library.base.BaseGson;
 import com.example.module_library.base.BasePresenter;
-import com.example.module_library.gson.UserGson;
+
 import com.example.module_library.http.BaseObserver;
 import com.example.module_login.contract.UserLoginContract;
 import com.example.module_login.model.UserLoginModel;
 
+import nico.stytool.gson_module.UserGson;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
 

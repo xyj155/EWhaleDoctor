@@ -1,7 +1,6 @@
 package com.example.module_library.adapter;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.graphics.Color;
 import android.support.annotation.Nullable;
 import android.text.SpannableString;
@@ -16,9 +15,11 @@ import com.chad.library.adapter.base.BaseViewHolder;
 
 import com.example.module_library.R;
 import com.example.module_library.config.RouterConfig;
-import com.example.module_library.gson.UserReceiveAddressGson;
+
 
 import java.util.List;
+
+import nico.stytool.gson_module.UserReceiveAddressGson;
 
 public class UserReceiveAddressAdapter extends BaseQuickAdapter<UserReceiveAddressGson, BaseViewHolder> {
     private Activity context;

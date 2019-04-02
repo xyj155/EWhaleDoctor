@@ -10,7 +10,7 @@ import com.alibaba.android.arouter.launcher.ARouter;
 import com.example.module_library.adapter.UserReceiveAddressAdapter;
 import com.example.module_library.base.BaseActivity;
 import com.example.module_library.config.RouterConfig;
-import com.example.module_library.gson.UserReceiveAddressGson;
+
 import com.example.module_library.util.SharePreferenceUtil;
 import com.example.module_user.R;
 import com.example.module_user.R2;
@@ -23,6 +23,7 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import nico.stytool.gson_module.UserReceiveAddressGson;
 
 public class UserReceivingAddressActivity extends BaseActivity<UserInformationContract.View, UserInformationPresenter> implements UserInformationContract.View {
 

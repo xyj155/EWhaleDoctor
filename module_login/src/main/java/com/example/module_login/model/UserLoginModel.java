@@ -2,10 +2,11 @@ package com.example.module_login.model;
 
 
 import com.example.module_library.base.BaseGson;
-import com.example.module_library.gson.UserGson;
+
 import com.example.module_library.http.RetrofitUtils;
 import com.example.module_login.contract.UserLoginContract;
 
+import nico.stytool.gson_module.UserGson;
 import rx.Observable;
 
 public class UserLoginModel implements UserLoginContract.Model {

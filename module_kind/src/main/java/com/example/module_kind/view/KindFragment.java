@@ -15,12 +15,13 @@ import com.example.module_kind.contract.SnackKindContract;
 import com.example.module_kind.presenter.SnackKindPresenter;
 import com.example.module_library.base.BaseFragment;
 import com.example.module_library.config.RouterConfig;
-import com.example.module_library.gson.SnackKindGson;
+
 
 import java.util.List;
 
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
+import nico.stytool.gson_module.SnackKindGson;
 
 @Route(path = RouterConfig.KINDFRAGMENT)
 public class KindFragment extends BaseFragment<SnackKindPresenter> implements SnackKindContract.View {

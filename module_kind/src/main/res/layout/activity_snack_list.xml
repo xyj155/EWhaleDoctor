@@ -1,14 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    android:orientation="vertical" xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#fff"
+    android:orientation="vertical"
+    android:paddingTop="@dimen/dp_20"
     tools:context=".view.SnackListActivity">
+
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="@dimen/dp_55">
+        android:layout_height="@dimen/dp_55"
+        android:background="#fff">
 
         <ImageView
             android:id="@+id/iv_close"
@@ -22,75 +26,180 @@
             android:id="@+id/tv_title"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:ellipsize="end"
             android:layout_centerInParent="true"
-            android:gravity="center|left"
-            android:textStyle="bold"
-            android:textSize="19sp"
-            android:maxLength="11"
-            android:text="酒水茶饮"
-            android:drawablePadding="@dimen/dp_3"
             android:drawableRight="@mipmap/ic_snack_kind_drop"
-            android:textColor="#000" />
+            android:drawablePadding="@dimen/dp_3"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:maxLength="11"
+            android:paddingLeft="@dimen/dp_10"
+            android:text="酒水茶饮"
+            android:textColor="#000"
+            android:textSize="19sp"
+            android:textStyle="bold" />
 
     </RelativeLayout>
-    <LinearLayout
+
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="horizontal"
-        android:weightSum="5">
+        android:layout_height="match_parent">
 
-        <com.example.module_library.weight.BounceRecyclerView
-            android:id="@+id/ry_item"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="3.8" />
+            android:orientation="horizontal"
+            android:weightSum="5">
 
-
-        <android.support.v4.widget.NestedScrollView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1.2">
-
-            <LinearLayout
+            <com.example.module_library.weight.BounceRecyclerView
+                android:id="@+id/ry_item"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical">
+                android:layout_weight="3.8" />
+
+            <View
+                android:layout_width="@dimen/dp_1.5"
+                android:layout_height="match_parent"
+                android:background="#fafafa" />
+
+            <android.support.v4.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1.2">
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:orientation="horizontal">
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
 
-                    <View
-                        android:layout_width="@dimen/dp_50"
-                        android:layout_height="@dimen/dp_1"
-                        android:background="#d8d8d8" />
-
-                    <TextView
-                        android:id="@+id/tv_name"
-                        android:layout_width="wrap_content"
+                    <LinearLayout
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="@dimen/dp_3"
-                        android:layout_marginRight="@dimen/dp_3"
-                        android:padding="@dimen/dp_8"
-                        android:text="推荐商品" />
+                        android:gravity="center"
+                        android:orientation="horizontal">
 
-                    <View
-                        android:layout_width="@dimen/dp_50"
-                        android:layout_height="@dimen/dp_1"
-                        android:background="#d8d8d8" />
+                        <View
+                            android:layout_width="@dimen/dp_50"
+                            android:layout_height="@dimen/dp_1"
+                            android:background="#d8d8d8" />
 
+                        <TextView
+                            android:id="@+id/tv_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/dp_3"
+                            android:layout_marginRight="@dimen/dp_3"
+                            android:padding="@dimen/dp_8"
+                            android:text="推荐商品" />
+
+                        <View
+                            android:layout_width="@dimen/dp_50"
+                            android:layout_height="@dimen/dp_1"
+                            android:background="#d8d8d8" />
+
+                    </LinearLayout>
+
+                    <com.example.module_library.weight.BounceRecyclerView
+                        android:id="@+id/ry_item_list"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
                 </LinearLayout>
 
-                <com.example.module_library.weight.BounceRecyclerView
-                    android:id="@+id/ry_item_list"
+
+            </android.support.v4.widget.NestedScrollView>
+        </LinearLayout>
+
+        <FrameLayout
+            android:id="@+id/fl_goods"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom">
+
+            <com.flipboard.bottomsheet.BottomSheetLayout
+                android:id="@+id/bottomSheetLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="@dimen/dp_45">
+
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent" />
-            </LinearLayout>
+            </com.flipboard.bottomsheet.BottomSheetLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_60"
+                android:layout_gravity="bottom"
+                android:layout_marginLeft="@dimen/dp_30"
+                android:layout_marginRight="@dimen/dp_30"
+                android:layout_marginBottom="@dimen/dp_30">
 
 
-        </android.support.v4.widget.NestedScrollView>
-    </LinearLayout>
+                <RelativeLayout
+                    android:layout_alignParentBottom="true"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_55"
+                    android:layout_gravity="bottom"
+                    android:layout_marginLeft="@dimen/dp_5"
+                    android:background="@drawable/snack_goodscar_bg_brown">
+
+
+                    <RelativeLayout
+                        android:id="@+id/rl_submit"
+                        android:layout_width="@dimen/dp_100"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentRight="true"
+                        android:layout_gravity="right">
+
+                        <ImageView
+                            android:layout_width="@dimen/dp_130"
+                            android:layout_height="wrap_content"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/snack_goods_car_bg" />
+
+                        <TextView
+                            android:id="@+id/tv_shopcar_count"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_centerInParent="true"
+                            android:gravity="center"
+                            android:text="去 结 算"
+                            android:textColor="#ffffff"
+                            android:textStyle="bold" />
+                    </RelativeLayout>
+                </RelativeLayout>
+
+                <ImageView
+                    android:id="@+id/iv_shopcar"
+                    android:layout_width="@dimen/dp_60"
+                    android:layout_height="@dimen/dp_60"
+                    android:layout_gravity="left"
+                    android:src="@drawable/snack_shopcar_icon" />
+                <LinearLayout
+                    android:layout_toRightOf="@+id/iv_shopcar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="@dimen/dp_5"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="合计：￥0.00"
+                        android:textColor="#fff"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#fff"
+                        android:textSize="12sp"
+                        android:padding="@dimen/dp_1.5"
+                        android:text="满88包邮，或支付9元邮费"/>
+                </LinearLayout>
+            </RelativeLayout>
+
+        </FrameLayout>
+    </RelativeLayout>
+
 </LinearLayout>

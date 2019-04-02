@@ -3,10 +3,10 @@ package com.example.module_user.model;
 
 
 import com.example.module_library.base.BaseGson;
-import com.example.module_library.gson.EmptyGson;
 import com.example.module_library.http.RetrofitUtils;
 import com.example.module_user.contract.AddressOfNewReceiptContract;
 
+import nico.stytool.gson_module.EmptyGson;
 import rx.Observable;
 
 public class AddressOfNewReceiptModel implements AddressOfNewReceiptContract.Model {

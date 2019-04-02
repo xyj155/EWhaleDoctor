@@ -4,10 +4,10 @@ import com.example.module_home.contract.HomePageContract;
 import com.example.module_home.model.HomePageModel;
 import com.example.module_library.base.BaseGson;
 import com.example.module_library.base.BasePresenter;
-import com.example.module_library.gson.FoodsGson;
 import com.example.module_library.http.BaseObserver;
 
-import rx.Scheduler;
+
+import nico.stytool.gson_module.FoodsGson;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
 

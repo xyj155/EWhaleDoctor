@@ -6,10 +6,12 @@ import android.widget.ImageView;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.example.module_library.R;
-import com.example.module_library.gson.FoodsGson;
+
 import com.example.module_library.util.GlideUtil;
 
 import java.util.List;
+
+import nico.stytool.gson_module.FoodsGson;
 
 public class SnackMiniItemAdapter extends BaseQuickAdapter<FoodsGson, BaseViewHolder> {
 

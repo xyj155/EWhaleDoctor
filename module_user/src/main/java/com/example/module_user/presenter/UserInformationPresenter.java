@@ -2,11 +2,12 @@ package com.example.module_user.presenter;
 
 import com.example.module_library.base.BaseGson;
 import com.example.module_library.base.BasePresenter;
-import com.example.module_library.gson.UserReceiveAddressGson;
+
 import com.example.module_library.http.BaseObserver;
 import com.example.module_user.contract.UserInformationContract;
 import com.example.module_user.model.UserInformationModel;
 
+import nico.stytool.gson_module.UserReceiveAddressGson;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
 

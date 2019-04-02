@@ -16,7 +16,7 @@ import com.example.module_home.presenter.HomePagePresenter;
 import com.example.module_home.view.MiniSnackActivity;
 import com.example.module_library.adapter.SnackMiniItemAdapter;
 import com.example.module_library.base.BaseFragment;
-import com.example.module_library.gson.FoodsGson;
+
 import com.example.module_library.util.GlideUtil;
 import com.example.module_library.weight.CustomRecyclerView;
 import com.zhouwei.mzbanner.MZBannerView;
@@ -30,6 +30,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import butterknife.Unbinder;
+import nico.stytool.gson_module.FoodsGson;
 
 public class HomePageFragment extends BaseFragment<HomePagePresenter> implements HomePageContract.View {
 

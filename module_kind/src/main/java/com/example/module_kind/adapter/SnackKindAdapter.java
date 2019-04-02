@@ -10,10 +10,12 @@ import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.example.module_kind.R;
 import com.example.module_kind.view.SnackListActivity;
-import com.example.module_library.gson.SnackKindGson;
+
 import com.example.module_library.util.GlideUtil;
 
 import java.util.List;
+
+import nico.stytool.gson_module.SnackKindGson;
 
 public class SnackKindAdapter extends BaseQuickAdapter<SnackKindGson, BaseViewHolder> {
 private Context context;
@@ -30,6 +32,7 @@ private Context context;
             public void onClick(View v) {
                 Intent intent = new Intent(context, SnackListActivity.class);
                 intent.putExtra("name",item.getSnackName());
+                intent.putExtra("pid",String.valueOf(item.getId()));
                 context.startActivity(intent);
             }
         });

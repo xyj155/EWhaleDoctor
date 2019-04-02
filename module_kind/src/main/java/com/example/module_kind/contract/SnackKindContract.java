@@ -2,10 +2,11 @@ package com.example.module_kind.contract;
 
 import com.example.module_library.base.BaseGson;
 import com.example.module_library.base.BaseView;
-import com.example.module_library.gson.SnackKindGson;
+
 
 import java.util.List;
 
+import nico.stytool.gson_module.SnackKindGson;
 import rx.Observable;
 
 public interface SnackKindContract {

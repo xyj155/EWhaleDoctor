@@ -2,10 +2,11 @@ package com.example.module_home.contract;
 
 import com.example.module_library.base.BaseGson;
 import com.example.module_library.base.BaseView;
-import com.example.module_library.gson.FoodsGson;
+
 
 import java.util.List;
 
+import nico.stytool.gson_module.FoodsGson;
 import rx.Observable;
 
 public interface HomePageContract {
