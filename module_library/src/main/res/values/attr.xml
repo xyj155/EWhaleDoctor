@@ -72,4 +72,9 @@
         <attr name="progressbar_rod_bg" format="reference|color" />
         <attr name="progressbar_text_bg" format="reference|color" />
     </declare-styleable>
+    <style name="BottomDialog" parent="@style/Base.V7.Theme.AppCompat.Light.Dialog">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+    </style>
+
 </resources>

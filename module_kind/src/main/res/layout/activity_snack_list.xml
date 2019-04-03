@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="#fff"
     android:orientation="vertical"
-    android:paddingTop="@dimen/dp_20"
-    tools:context=".view.SnackListActivity">
+    android:paddingTop="@dimen/dp_20">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -41,10 +39,12 @@
     </RelativeLayout>
 
     <RelativeLayout
+        android:id="@+id/rl_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <LinearLayout
+            android:layout_marginBottom="@dimen/dp_85"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="horizontal"
@@ -61,64 +61,59 @@
                 android:layout_height="match_parent"
                 android:background="#fafafa" />
 
-            <android.support.v4.widget.NestedScrollView
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="1.2">
+                android:layout_weight="1.2"
+                android:orientation="vertical">
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal">
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
+                    <View
+                        android:layout_width="@dimen/dp_50"
+                        android:layout_height="@dimen/dp_1"
+                        android:background="#d8d8d8" />
+
+                    <TextView
+                        android:id="@+id/tv_name"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:orientation="horizontal">
+                        android:layout_marginLeft="@dimen/dp_3"
+                        android:layout_marginRight="@dimen/dp_3"
+                        android:padding="@dimen/dp_8"
+                        android:text="推荐商品" />
 
-                        <View
-                            android:layout_width="@dimen/dp_50"
-                            android:layout_height="@dimen/dp_1"
-                            android:background="#d8d8d8" />
+                    <View
+                        android:layout_width="@dimen/dp_50"
+                        android:layout_height="@dimen/dp_1"
+                        android:background="#d8d8d8" />
 
-                        <TextView
-                            android:id="@+id/tv_name"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="@dimen/dp_3"
-                            android:layout_marginRight="@dimen/dp_3"
-                            android:padding="@dimen/dp_8"
-                            android:text="推荐商品" />
-
-                        <View
-                            android:layout_width="@dimen/dp_50"
-                            android:layout_height="@dimen/dp_1"
-                            android:background="#d8d8d8" />
-
-                    </LinearLayout>
-
-                    <com.example.module_library.weight.BounceRecyclerView
-                        android:id="@+id/ry_item_list"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent" />
                 </LinearLayout>
 
+                <com.example.module_library.weight.BounceRecyclerView
+                    android:id="@+id/ry_item_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
 
-            </android.support.v4.widget.NestedScrollView>
         </LinearLayout>
 
-        <FrameLayout
+        <RelativeLayout
             android:id="@+id/fl_goods"
             android:layout_width="match_parent"
+
             android:layout_height="wrap_content"
             android:layout_gravity="bottom">
 
             <com.flipboard.bottomsheet.BottomSheetLayout
                 android:id="@+id/bottomSheetLayout"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginBottom="@dimen/dp_45">
+                android:layout_above="@+id/rl_shopcar"
+                android:layout_height="wrap_content">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -126,80 +121,93 @@
             </com.flipboard.bottomsheet.BottomSheetLayout>
 
             <RelativeLayout
+                android:layout_alignParentBottom="true"
+                android:id="@+id/rl_shopcar"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/dp_60"
-                android:layout_gravity="bottom"
-                android:layout_marginLeft="@dimen/dp_30"
-                android:layout_marginRight="@dimen/dp_30"
-                android:layout_marginBottom="@dimen/dp_30">
-
+                android:background="#fff"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom">
 
                 <RelativeLayout
-                    android:layout_alignParentBottom="true"
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/dp_55"
-                    android:layout_gravity="bottom"
-                    android:layout_marginLeft="@dimen/dp_5"
-                    android:background="@drawable/snack_goodscar_bg_brown">
+                    android:layout_height="@dimen/dp_60"
+                    android:layout_marginLeft="@dimen/dp_30"
+                    android:layout_marginRight="@dimen/dp_30"
+                    android:layout_marginBottom="@dimen/dp_30">
 
 
                     <RelativeLayout
-                        android:id="@+id/rl_submit"
-                        android:layout_width="@dimen/dp_100"
-                        android:layout_height="match_parent"
-                        android:layout_alignParentRight="true"
-                        android:layout_gravity="right">
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dp_55"
+                        android:layout_alignParentBottom="true"
+                        android:layout_gravity="bottom"
+                        android:layout_marginLeft="@dimen/dp_5"
+                        android:background="@drawable/snack_goodscar_bg_brown">
 
-                        <ImageView
-                            android:layout_width="@dimen/dp_130"
-                            android:layout_height="wrap_content"
-                            android:scaleType="fitXY"
-                            android:src="@drawable/snack_goods_car_bg" />
+
+                        <RelativeLayout
+                            android:id="@+id/rl_submit"
+                            android:layout_width="@dimen/dp_100"
+                            android:layout_height="match_parent"
+                            android:layout_alignParentRight="true"
+                            android:layout_gravity="right">
+
+                            <ImageView
+                                android:layout_width="@dimen/dp_130"
+                                android:layout_height="wrap_content"
+                                android:scaleType="fitXY"
+                                android:src="@drawable/shop_buy_bg" />
+
+                            <TextView
+                                android:id="@+id/tv_submit"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_centerInParent="true"
+                                android:gravity="center"
+                                android:text="去 结 算"
+                                android:textColor="#ffffff"
+                                android:textSize="17sp"
+                                android:textStyle="bold" />
+                        </RelativeLayout>
+                    </RelativeLayout>
+
+                    <ImageView
+                        android:id="@+id/iv_shopcar"
+                        android:layout_width="@dimen/dp_60"
+                        android:layout_height="@dimen/dp_60"
+                        android:layout_gravity="left"
+                        android:src="@drawable/snack_shopcar_icon" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginBottom="@dimen/dp_5"
+                        android:layout_toRightOf="@+id/iv_shopcar"
+                        android:orientation="vertical">
 
                         <TextView
-                            android:id="@+id/tv_shopcar_count"
+                            android:id="@+id/tv_money"
                             android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:layout_centerInParent="true"
-                            android:gravity="center"
-                            android:text="去 结 算"
-                            android:textColor="#ffffff"
+                            android:layout_height="wrap_content"
+                            android:text="合计：￥0.00"
+                            android:textColor="#fff"
+                            android:textSize="18sp"
                             android:textStyle="bold" />
-                    </RelativeLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="@dimen/dp_1.5"
+                            android:text="满88包邮，或支付9元邮费"
+                            android:textColor="#fff"
+                            android:textSize="10sp" />
+                    </LinearLayout>
                 </RelativeLayout>
-
-                <ImageView
-                    android:id="@+id/iv_shopcar"
-                    android:layout_width="@dimen/dp_60"
-                    android:layout_height="@dimen/dp_60"
-                    android:layout_gravity="left"
-                    android:src="@drawable/snack_shopcar_icon" />
-                <LinearLayout
-                    android:layout_toRightOf="@+id/iv_shopcar"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentBottom="true"
-                    android:layout_marginBottom="@dimen/dp_5"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="合计：￥0.00"
-                        android:textColor="#fff"
-                        android:textSize="18sp"
-                        android:textStyle="bold" />
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textColor="#fff"
-                        android:textSize="12sp"
-                        android:padding="@dimen/dp_1.5"
-                        android:text="满88包邮，或支付9元邮费"/>
-                </LinearLayout>
             </RelativeLayout>
 
-        </FrameLayout>
+
+        </RelativeLayout>
     </RelativeLayout>
 
 </LinearLayout>

@@ -1,5 +1,6 @@
 package com.example.module_kind.adapter;
 
+import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;

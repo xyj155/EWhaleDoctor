@@ -2,6 +2,7 @@ package com.example.module_library.config;
 
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.example.module_library.MyApp;
+import com.example.module_library.util.CrashHandler;
 import com.example.module_library.weight.toast.ToastUtils;
 import com.tencent.tauth.Tencent;
 
@@ -20,6 +21,11 @@ public class ApplicationInitial {
 
     public ApplicationInitial initTencentQQ() {
         Tencent instance = Tencent.createInstance("1108195133", MyApp.getInstance());
+        return this;
+    }
+
+    public ApplicationInitial initCrash() {
+        CrashHandler.getInstance().init(MyApp.getInstance());//初始化全局异常管理
         return this;
     }
 }

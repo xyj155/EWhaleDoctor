@@ -7,7 +7,9 @@ import com.example.module_library.base.BaseGson;
 import nico.stytool.gson_module.EmptyGson;
 import nico.stytool.gson_module.FoodsGson;
 import nico.stytool.gson_module.SnackChildGson;
+import nico.stytool.gson_module.SnackGson;
 import nico.stytool.gson_module.SnackKindGson;
+import nico.stytool.gson_module.SnackShopCarGson;
 import nico.stytool.gson_module.UserGson;
 import nico.stytool.gson_module.UserReceiveAddressGson;
 import retrofit2.http.Field;
@@ -50,4 +52,14 @@ public interface Api {
 
     @GET("/StuShop/public/index.php/snack/Snack/querySnackChildByPid")
     Observable<BaseGson<SnackChildGson>> querySnackChildByPid(@Query("pid") String pid);
+
+    @GET("/StuShop/public/index.php/snack/Snack/querySnackListByPid")
+    Observable<BaseGson<SnackGson>> querySnackListByPid(@Query("pid") String pid,@Query("userId") String userId);
+    @FormUrlEncoded
+    @POST("/StuShop/public/index.php/index/Foods/addSnackByUserId")
+    Observable<BaseGson<EmptyGson>> addSnackByUserId(@Field("userId") String userId, @Field("goodsId") String goodsId, @Field("tasteId") String tasteId, @Field("isDelete") String isDelete);
+
+    @GET("/StuShop/public/index.php/index/Foods/queryUserAllSnack")
+    Observable<BaseGson<SnackShopCarGson>> queryUserAllSnack(@Query("userId") String userId);
+
 }

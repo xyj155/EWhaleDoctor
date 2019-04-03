@@ -21,6 +21,12 @@ public class MyApp extends Application {
         ApplicationInitial applicationInitial = new ApplicationInitial();
         applicationInitial.initAliBabaRouter()
                 .initToast()
+                .initCrash()
                 .initTencentQQ();
+    }
+    @Override
+    public void onTerminate() {
+        super.onTerminate();
+        System.exit(0);
     }
 }

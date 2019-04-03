@@ -25,11 +25,7 @@ public abstract class BaseActivity<V extends BaseView, T extends BasePresenter<V
     private LoadingDialog myDialog1;
 
 
-    //    @Override
-//    public void onBackPressed() {
-//        super.onBackPressed();
-//        ActivityCompat.finishAfterTransition(this);
-//    }
+
     public void showMsgDialog(String title, String content, final OnItemClickListener onItemClickListener) {
         if (myDialog1 != null) {
             myDialog1.setContent(content);
